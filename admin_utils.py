@@ -66,18 +66,18 @@ async def get_all_securities():
 
 
 # !!! Если работаем в Windows - раскомментируйте это тоже:
-# asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
 #  1. Запуск функции для загрузки Справочников MOEX. Примеры:
 # Справочники MOEX: engines, markets, boards, boardgroups, durations,
 # securitytypes, securitygroups, securitycollections.
 
-# asyncio.run(get_catalogs()) # все справочники разом
+asyncio.run(get_catalogs()) # все справочники разом
 
 #  2. Запуск функции для загрузки всех бумаг с MOEX. Запускаем только после загрузки всех справочников по п.1,
 # т.к. они нужны для создания одной из таблиц БД. Занимает от 2 до 4 часов
 
-# asyncio.run(get_all_securities())
+asyncio.run(get_all_securities())
 
 
 

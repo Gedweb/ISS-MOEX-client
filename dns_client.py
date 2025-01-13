@@ -35,7 +35,7 @@ class DNS_ISSClient(ISSClient):
         url = self._url
         query = self._make_query(start)
         print(f"{datetime.now()}: DNS_ISSClient.get.url: {url}")
-        for dns_server in ['8.8.8.8', '77.88.8.1']:
+        for dns_server in ['77.88.8.1', '8.8.8.8', ]:
             connector = None
             try:
                 resolver = aiohttp.resolver.AsyncResolver(nameservers=[dns_server])
