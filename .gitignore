@@ -5,3 +5,8 @@ dns_test_w1.py
 /.tmp.driveupload/
 /cache/
 /venv_new/
+__pycache__
+*.iml
+/.idea
+/docker/mysql/data
+/Users_Files/

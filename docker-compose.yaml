@@ -1,0 +1,23 @@
+services:
+  moex:
+    build:
+      context: docker/python
+    restart: always
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    ports:
+      - "8050:8050"
+    entrypoint: [ "python", "/app/index.py" ]
+
+  db:
+    build:
+      context: docker/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./docker/mysql/data:/var/lib/mysql
+    ports:
+      - "3306:3306"

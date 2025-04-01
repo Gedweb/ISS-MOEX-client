@@ -3,43 +3,16 @@ import platform
 from config import Config
 from sqlalchemy.engine.url import URL
 
-# print(platform.system())
-if platform.system() == "Windows":
-    OS_TYPE = "Windows"
-    host = 'localhost'
-    user = Config.login
-    password = Config.password
-    database = 'moex_db'
-    unix_socket = ""
-    CONNECT_ARGS = {}
-elif platform.system() == "Darwin":
-    """
-    Macos. После установки mysql инициализировать db в панели управления. 
-    """
-    OS_TYPE = "MacOS"
-    host = 'localhost'
-    user = Config.login
-    password = Config.password
-    database = 'moex_db'
-    unix_socket = '/tmp/mysql.sock'
-    CONNECT_ARGS = {'unix_socket': unix_socket}
-else:
-    OS_TYPE = "Other OS"
-    host = '91.201.52.115'
-    user = Config.unix_user
-    password = Config.unix_pass
-    database = 'c85994_moex_backtrader_ru'
-    unix_socket = "/run/mysqld/mysqld.sock"
-    CONNECT_ARGS = {'unix_socket': unix_socket}
+OS_TYPE = "Other OS"
+CONNECT_ARGS = {}
 
 ENGINE_STR = URL.create(
     drivername="mysql+pymysql",
-    username=user,
-    password=password,
-    host=host,
-    database=database
+    username=Config.login,
+    password=Config.password,
+    host=Config.host,
+    database=Config.database
 )
-
 
 # securitygroups
 MARKETS = {

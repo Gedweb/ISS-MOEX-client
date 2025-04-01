@@ -64,10 +64,6 @@ async def get_all_securities():
 
     load_all_sec(df)
 
-
-# !!! Если работаем в Windows - раскомментируйте это тоже:
-asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
-
 #  1. Запуск функции для загрузки Справочников MOEX. Примеры:
 # Справочники MOEX: engines, markets, boards, boardgroups, durations,
 # securitytypes, securitygroups, securitycollections.

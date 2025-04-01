@@ -472,7 +472,4 @@ def toggle_about(n1, is_open):
 
 
 if __name__ == '__main__':
-    if OS_TYPE == "Windows":
-        asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
-        # app.run_server(debug=True, host='127.0.4.177', port='51717')
-    app.run_server(debug=True, host='127.0.0.1', port='8050')
+    app.run_server(debug=True, host='0.0.0.0', port='8050')

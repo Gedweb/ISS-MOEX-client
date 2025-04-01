@@ -47,6 +47,12 @@
 
 ## Установка и запуск
 
+```shell
+docker compose up
+docker compose exec -it db sh -c "mysql -u root -proot < /tmp/schema.sql" 
+docker compose exec -it moex sh -c "python /app/admin_utils.py"
+```
+
 1. Установите _Python 3.11_.
 2. Установите _MySQL Community Server_ с параметрами по умолчанию.
 3. Установите клиента MySQL: _HeidiSQL_ или _DBeaver_ с параметрами по умолчанию.

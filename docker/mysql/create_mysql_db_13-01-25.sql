@@ -1,4 +1,6 @@
 -- moex_db.boardgroups определение
+create database moex_db;
+use moex_db;
 
 CREATE TABLE `boardgroups` (
   `id` int unsigned NOT NULL,
